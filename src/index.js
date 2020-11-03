@@ -1,5 +1,6 @@
 const quoteList = document.querySelector("#quote-list")
 const newQuoteForm = document.querySelector("#new-quote-form")
+const createdAt = Date.now()
 
 function renderQuote(quoteObj) {
     quoteList.innerHTML += `
@@ -56,7 +57,6 @@ function creationEvent(event) {
     event.preventDefault();
     let quote = event.target.quote.value
     let author = event.target.author.value
-    let createdAt = Date.now()
 
     fetch("http://localhost:3000/quotes", {
         method: 'POST',
@@ -75,6 +75,7 @@ function creationEvent(event) {
         newQuote.likes = []
         renderQuote(newQuote)
     })
+    event.target.reset()
 }
 
 function renderAllQuotes(quotesData) {
