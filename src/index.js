@@ -1,6 +1,6 @@
 const quoteList = document.querySelector("#quote-list")
 const newQuoteForm = document.querySelector("#new-quote-form")
-const createdAt = Date.now()
+
 
 function renderQuote(quoteObj) {
     quoteList.innerHTML += `
@@ -67,7 +67,7 @@ function creationEvent(event) {
         body: JSON.stringify({
             quote: quote,
             author: author,
-            timestamp: createdAt
+            timestamp: Date.now()
         })
     })
     .then(res => res.json())
