@@ -19,7 +19,7 @@ function renderQuote(quoteObj) {
 quoteList.addEventListener("click", (event) => {
     let id = event.target.dataset.id
     let quoteCard = event.target.parentElement.parentElement
-    if (event.target.tagName === "BUTTON" && event.target.className === "btn-danger"){
+    if (event.target.className === "btn-danger") {
         fetch(`http://localhost:3000/quotes/${id}`,{
             method: 'DELETE'
         })
@@ -29,7 +29,7 @@ quoteList.addEventListener("click", (event) => {
         })
     }
 
-    else if(event.target.tagName === "BUTTON" && event.target.className === "btn-success"){
+    else if (event.target.className === "btn-success") {
         let quoteIdInteger = parseInt(id)
         let newLikeCount = parseInt(event.target.firstElementChild.innerText) + 1
 
