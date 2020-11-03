@@ -1,6 +1,7 @@
 #quote-list {
   padding: 20px;
   background-color: cadetblue;
+  border-radius: 14px;
 }
 
 .blockquote-footer {
@@ -10,6 +11,6 @@
 
 #new-quote-form {
   background-color: rgb(98, 112, 119);
-  
+  border-radius: 14px;
 }
 
