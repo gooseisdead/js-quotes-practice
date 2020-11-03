@@ -50,9 +50,9 @@ quoteList.addEventListener("click", (event) => {
 
 })
 
-newQuoteForm.addEventListener("submit", handleCreate)
+newQuoteForm.addEventListener("submit", creationEvent)
 
-function handleCreate(event) {
+function creationEvent(event) {
     event.preventDefault();
     let newQuote = newQuoteForm.querySelector('#new-quote').value
     let newAuthor = newQuoteForm["author"].value
