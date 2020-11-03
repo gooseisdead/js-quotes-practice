@@ -3,7 +3,7 @@ const newQuoteForm = document.querySelector("#new-quote-form")
 
 function renderQuote(quoteObj) {
     quoteList.innerHTML += `
-    <li class='quote-card' id="data-${quoteObj.id}">
+    <li class='quote-card' style="list-style-type:none;" id="data-${quoteObj.id}">
         <blockquote class="blockquote">
             <p class="quote">"${quoteObj.quote}"</p>
             <footer class="blockquote-footer">${quoteObj.author}</footer>
@@ -56,7 +56,7 @@ function creationEvent(event) {
     event.preventDefault();
     let quote = event.target.quote.value
     let author = event.target.author.value
-    let createdAt = Math.round((new Date()).getTime() / 1000)
+    // let createdAt = new Date(Date.now())
 
     fetch("http://localhost:3000/quotes", {
         method: 'POST',
@@ -67,7 +67,7 @@ function creationEvent(event) {
         body: JSON.stringify({
             quote: quote,
             author: author,
-            timestamp: createdAt
+            timestamp: new Date()
         })
     })
     .then(res => res.json())
