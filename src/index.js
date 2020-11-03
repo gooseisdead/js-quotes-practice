@@ -1,7 +1,6 @@
 const quoteList = document.querySelector("#quote-list")
 const newQuoteForm = document.querySelector("#new-quote-form")
 
-
 function renderQuote(quoteObj) {
     quoteList.innerHTML += `
     <li class='quote-card' id="data-${quoteObj.id}">

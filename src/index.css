@@ -17,6 +17,7 @@ body {
 }
 
 #new-quote-form {
+  text-align: center;
   background-color: cadetblue;
   border-radius: 14px;
 }
