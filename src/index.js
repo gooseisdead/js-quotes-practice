@@ -5,7 +5,7 @@ function renderQuote(quoteObj) {
     quoteList.innerHTML += `
     <li class='quote-card' id="data-${quoteObj.id}">
         <blockquote class="blockquote">
-            <p class="mb-0">"${quoteObj.quote}"</p>
+            <p class="quote">"${quoteObj.quote}"</p>
             <footer class="blockquote-footer">${quoteObj.author}</footer>
             <br>
             <button class='btn-success' data-id="${quoteObj.id}">Likes: <span>${quoteObj.likes.length}</span></button>
@@ -42,7 +42,7 @@ quoteList.addEventListener("click", (event) => {
             quoteId: quoteIdInteger,
             })
         })
-        .then(res => res.json())
+        .then(response => response.json())
         .then(createdLike => {
             event.target.firstElementChild.innerText = newLikeCount
         })
@@ -56,6 +56,7 @@ function creationEvent(event) {
     event.preventDefault();
     let newQuote = newQuoteForm.querySelector('#new-quote').value
     let newAuthor = newQuoteForm["author"].value
+    let createdAt = Date.now()
 
     fetch("http://localhost:3000/quotes", {
         method: 'POST',
@@ -65,7 +66,8 @@ function creationEvent(event) {
         },
         body: JSON.stringify({
             quote: newQuote,
-            author: newAuthor
+            author: newAuthor,
+            timestamp: createdAt
         })
     })
     .then(res => res.json())
@@ -81,7 +83,7 @@ function renderAllQuotes(quotesData) {
 
 function initialize () {
     fetch("http://localhost:3000/quotes?_embed=likes")
-    .then(res => res.json())
+    .then(response => response.json())
     .then(quotesData => {
         renderAllQuotes(quotesData)
     })
