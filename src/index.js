@@ -24,7 +24,7 @@ quoteList.addEventListener("click", (event) => {
             method: 'DELETE'
         })
         .then(response => response.json())
-        .then(deletedQuote => {
+        .then(beef => {
             quoteCard.remove()
         })
     }
@@ -57,6 +57,7 @@ function creationEvent(event) {
     event.preventDefault();
     let quote = event.target.quote.value
     let author = event.target.author.value
+    let createdAt = Math.round((new Date()).getTime() / 1000)
 
     fetch("http://localhost:3000/quotes", {
         method: 'POST',
@@ -67,7 +68,7 @@ function creationEvent(event) {
         body: JSON.stringify({
             quote: quote,
             author: author,
-            timestamp: Date.now()
+            timestamp: createdAt
         })
     })
     .then(res => res.json())

@@ -1,22 +1,23 @@
 body {
   background-color: wheat;
-  font-family: cursive
+  font-family: cursive;
 }
 
 #quote-list {
   padding: 20px;
   background-color: cadetblue;
   border-radius: 14px;
+  margin: auto;
 }
 
 .blockquote-footer {
   text-align: center;
-  background-color: rgb(215, 224, 181);
+  background-color: wheat;
   border-radius: 14px;
 }
 
 #new-quote-form {
-  background-color: rgb(98, 112, 119);
+  background-color: cadetblue;
   border-radius: 14px;
 }
 
@@ -24,3 +25,7 @@ h1 {
   text-align: center;
 }
 
+p {
+  text-align: center;
+  text-decoration: black;
+}
