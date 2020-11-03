@@ -54,8 +54,8 @@ newQuoteForm.addEventListener("submit", creationEvent)
 
 function creationEvent(event) {
     event.preventDefault();
-    let newQuote = newQuoteForm.querySelector('#new-quote').value
-    let newAuthor = newQuoteForm["author"].value
+    let quote = event.target.quote.value
+    let author = event.target.author.value
     let createdAt = Date.now()
 
     fetch("http://localhost:3000/quotes", {
@@ -65,8 +65,8 @@ function creationEvent(event) {
             "Accept": "application/json"
         },
         body: JSON.stringify({
-            quote: newQuote,
-            author: newAuthor,
+            quote: quote,
+            author: author,
             timestamp: createdAt
         })
     })

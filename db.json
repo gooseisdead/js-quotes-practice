@@ -50,7 +50,38 @@
       "author": "Travis Shettel",
       "timestamp": 1604416052603,
       "id": 13
+    },
+    {
+      "quote": "We didn't start the fire. It was always burning, since the world's been turning.",
+      "author": "Billy Joel",
+      "timestamp": 1604417905431,
+      "id": 14
     }
   ],
-  "likes": []
+  "likes": [
+    {
+      "quoteId": 13,
+      "id": 1
+    },
+    {
+      "quoteId": 13,
+      "id": 2
+    },
+    {
+      "quoteId": 14,
+      "id": 3
+    },
+    {
+      "quoteId": 14,
+      "id": 4
+    },
+    {
+      "quoteId": 14,
+      "id": 5
+    },
+    {
+      "quoteId": 14,
+      "id": 6
+    }
+  ]
 }
